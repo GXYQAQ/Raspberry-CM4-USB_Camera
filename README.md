@@ -1,7 +1,4 @@
 # Raspberry-CM4-USB_Camera
-## 树莓派ssh登录  
-ID：`pi`  
-KEY：`raspberry`  
 
 <details>
 <summary>参考链接</summary>
@@ -17,9 +14,28 @@ __先连接屏幕再打开树莓派电源__，与电脑连接到同一手机热�
    __无需执行安装及下载__
    
 </details>
-    
+
+## 树莓派ssh登录  
+ID：`pi`  
+KEY：`raspberry`  
 ## ssh登录示例
-### 1. 获得电脑IP地址
+### 1. 连接WIFI
+[新建WIFI](#新建wifi) 或 [使用 test WIFI](#创建test-wifi)
+#### 新建WIFI
+打开手机热点或使用其他WIFI，切勿使用带有AP隔离的公共WIFI
+
+[使用触摸屏控制树莓派](https://www.waveshare.net/wiki/15.6inch_HDMI_LCD_(H)_(%E5%B8%A6%E5%A4%96%E5%A3%B3)#.E6.90.AD.E9.85.8D.E6.A0.91.E8.8E.93.E6.B4.BE.E4.BD.BF.E7.94.A8)
+
+只做5)、6)、7)步，_**先连接屏幕再打开树莓派电源**_
+
+__将电脑连接到同一手机热点__
+#### 创建test WIFI
+设置手机热点或WIFI名称为`test`，密码为`12345678`
+
+打开电源即可
+
+### 2. 获得电脑IP地址
+
 输入命令
 
     ipconfig
@@ -71,3 +87,4 @@ IP 地址是`192.168.43.236`，则其他设备的地址将在这个`192.168.43.0
 
     http://192.168.43.43:8080/?action=stream
 
+[新建WIFI](#新建wifi) 或 [使用 test WIFI](#创建test-wifi)
