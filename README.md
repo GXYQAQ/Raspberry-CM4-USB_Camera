@@ -99,7 +99,11 @@ IP 地址是`192.168.43.236`，则其他设备的地址将在这个`192.168.43.0
 切换管理员权限
 
     sudo su
+
+切换路径
+
     cd
+
 启动推流
 
     cd mjpg-streamer/mjpg-streamer-experimental/
