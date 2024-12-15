@@ -25,6 +25,18 @@ ID：`pi`
 
 KEY：`raspberry`  
 ## ssh登录示例
+### 1. 打开小车及树莓派电源&连接WIFI
+
+稍待片刻
+
+电脑连接`UGV`; `12345678`
+
+<details>
+<summary>
+    
+### 连接WIFI（非必要）
+</summary>
+    
 ### 1. 连接WIFI
 [新建WIFI](#新建wifi) 或 [使用 test WIFI](#创建test-wifi)
 - #### 新建WIFI
@@ -40,6 +52,8 @@ KEY：`raspberry`
 
    打开电源即可
 
+</details>
+
 ### 2. 获得电脑IP地址
 
 输入命令
@@ -51,32 +65,32 @@ KEY：`raspberry`
     
        连接特定的 DNS 后缀 . . . . . . . :
        本地链接 IPv6 地址. . . . . . . . : fe80::2170:b943:1c89:a074%16
-       IPv4 地址 . . . . . . . . . . . . : 192.168.43.236
+       IPv4 地址 . . . . . . . . . . . . : 192.168.4.2
        子网掩码  . . . . . . . . . . . . : 255.255.255.0
        默认网关. . . . . . . . . . . . . : 192.168.43.1
 IP 地址是`192.168.43.236`，则其他设备的地址将在这个`192.168.43.0/24`子网范围内（这涵盖`192.168.43.0`到`192.168.43.255`）  
 ### 4. 扫描设备
 输入命令
 
-    nmap -sn 192.168.43.0/24
+    nmap -sn 192.168.4.0/24
 例
    
     Starting Nmap 7.92 ( https://nmap.org ) at 2024-12-13 18:30 中国标准时间
     Nmap scan report for 192.168.43.1
     Host is up (0.0092s latency).
     MAC Address: AA:7D:12:D5:A1:C1 (Unknown)
-    Nmap scan report for raspberrypi (192.168.43.43)
+    Nmap scan report for raspberrypi (192.168.4.3)
     Host is up (0.043s latency).
     MAC Address: D8:3A:DD:CC:F7:93 (Unknown)
-    Nmap scan report for LAPTOP-K28L6V18 (192.168.43.236)
+    Nmap scan report for LAPTOP-K28L6V18 (192.168.4.2)
     Host is up.
     Nmap done: 256 IP addresses (3 hosts up) scanned in 2.66 seconds
 其中`Nmap scan report for raspberrypi (192.168.43.43)`为所需IP
 ### 5. ssh连接
 输入命令
 
-    ssh pi@192.168.43.43
-显示`pi@192.168.43.43's password:`  
+    ssh pi@192.168.4.3
+显示`pi@192.168.4.3's password:`  
 输入密码
 
     raspberry
@@ -85,11 +99,15 @@ IP 地址是`192.168.43.236`，则其他设备的地址将在这个`192.168.43.0
 切换管理员权限
 
     sudo su
+    cd
 启动推流
 
     cd mjpg-streamer/mjpg-streamer-experimental/
     sh start.sh
 本例对应source链接
 
-    http://192.168.43.43:8080/?action=stream
+    http://192.168.4.3:8080/?action=stream
+
+### 7. 运行结束
+`Ctrl + C`
 
